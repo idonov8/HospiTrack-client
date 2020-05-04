@@ -3,7 +3,7 @@ import { Text, View, Image } from 'react-native'
 import Button from 'react-native-really-awesome-button/src/themes/rick';
 import { Helpers, Fonts, Images, Metrics } from '../Theme';
 
-export default function GrantPermissionBody(props) {
+export default function SampleBody(props) {
   const { btnTitle, btnAction, helperText  } = props;
   
   return (
