@@ -21,7 +21,7 @@ class ScanningScreen extends React.Component {
       >
         <SampleBody
           helperText={helperText}
-          btnTitle={isScanning ? 'עצור': 'התחל'}
+          btnTitle={isScanning ? 'יצאתי': 'נכנסתי'}
           btnAction={isScanning ? stopSampling : startSampling}/>
       </View>
     )
