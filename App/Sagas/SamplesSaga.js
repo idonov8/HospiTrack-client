@@ -1,20 +1,18 @@
 import { race, take, select, put, all, delay, fork, cancel, call } from 'redux-saga/effects';
 import GpsActions, { GpsTypes } from '../Stores/Gps/Actions';
-import { NEXT_SAMPLE_DELAY , ANDROID10_SAMPLE_DELAY, ANDROID10_API_LEVEL as ANDROID10} from '../Consts';
+import { NEXT_SAMPLE_DELAY } from '../Consts';
 import WifiActions, { WifiTypes } from '../Stores/Wifi/Actions';
 import SampleActions from '../Stores/Samples/Actions';
 import { gpsService } from '../Services/GpsService';
 import { wifiService } from '../Services/WifiService';
 import { dbService } from '../Services/DbService';
-import { Platform } from 'react-native';
 import { phoneService } from '../Services/PhoneService';
 
 const wifiListSelector = (state) => !state.wifi.sampleSent && state.wifi.wifiList;
 const gpsLocationSelector = (state) => !state.gps.sampleSent && state.gps.gpsLocation;
 const roomIdSelector = (state) => state.samples.roomId;
 
-const DELAY = 
-Platform.Version >= ANDROID10 ? ANDROID10_SAMPLE_DELAY : NEXT_SAMPLE_DELAY;
+const DELAY = NEXT_SAMPLE_DELAY;
 
 export function* sampleData() {
   while (true) {
