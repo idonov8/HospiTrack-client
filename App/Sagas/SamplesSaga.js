@@ -6,7 +6,6 @@ import SampleActions from '../Stores/Samples/Actions';
 import { gpsService } from '../Services/GpsService';
 import { wifiService } from '../Services/WifiService';
 import { dbService } from '../Services/DbService';
-import { Platform } from 'react-native';
 import { phoneService } from '../Services/PhoneService';
 
 const wifiListSelector = (state) => !state.wifi.sampleSent && state.wifi.wifiList;
