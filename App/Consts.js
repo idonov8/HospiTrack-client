@@ -1,8 +1,5 @@
 export const REPEAT_LOCATION_SCAN_TIMES = 10;
-const ALWAYS_SAME_DELAY = 3000;
-export const NEXT_SAMPLE_DELAY = ALWAYS_SAME_DELAY || 30000; // 4 scans in 2min is Google's limitation
-export const ANDROID10_SAMPLE_DELAY = ALWAYS_SAME_DELAY || 5000; // Android 10 gives option for more scans in dev settings
-export const ANDROID10_API_LEVEL = 29;
+export const NEXT_SAMPLE_DELAY = 45000; // scan every 45 seconds
 
 export const GPS_TIMEOUT = NEXT_SAMPLE_DELAY;
 export const API_TIMEOUT = NEXT_SAMPLE_DELAY;
