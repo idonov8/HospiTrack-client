@@ -1,7 +1,7 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation'
 import NoPermissionsScreen from '../Containers/NoPermissionsScreen/NoPermissionsScreen'
 import SplashScreen from '../Containers/SplashScreen/SplashScreen'
-import ScanningScreen from '../Containers/ScaningScreen/ScanningScreen'
+import ScanningScreen from '../Containers/ScanningScreen/ScanningScreen'
 
 
 /**
@@ -13,7 +13,7 @@ const StackNavigator = createStackNavigator(
   {
     // Create the application routes here (the key is the route name, the value is the target screen)
     SplashScreen: SplashScreen,
-    // Make main screen is an empty stub for now
+    // Make main screen is ScanningScreen
     MainScreen: ScanningScreen,
     NoPermissionsScreen,
   },
