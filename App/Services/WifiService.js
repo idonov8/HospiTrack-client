@@ -1,8 +1,25 @@
 import WifiManager from "react-native-wifi-reborn";
 
-async function fetchWifiList() {
+async function isWifiEnabled() {
   return new Promise((res, rej) => {
+    WifiManager.isEnabled((isEnabled) => {
+      res(isEnabled);
+    });
+  })
+}
+
+async function validateWifiEnabled() {
+  const isEnabled = await isWifiEnabled();
+
+  if (!isEnabled) {
     WifiManager.setEnabled(true);
+  }
+}
+
+async function fetchWifiList() {
+  await validateWifiEnabled();
+
+  return new Promise((res, rej) => {
     WifiManager.reScanAndLoadWifiList(
       wifiList => {
           let wifiArray =  JSON.parse(wifiList);
