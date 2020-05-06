@@ -31,7 +31,7 @@ async function fetchWifiList() {
   })
 }
 
-async function getWifiDataForSample(wifiList) {
+function getWifiDataForSample(wifiList) {
   const wifiDict = wifiList.reduce((accum, curr) => {
     // Set object at key bssid with value rssi
     accum[curr.BSSID] = curr.level;
