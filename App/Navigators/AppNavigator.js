@@ -2,7 +2,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation'
 import NoPermissionsScreen from '../Containers/NoPermissionsScreen/NoPermissionsScreen'
 import SplashScreen from '../Containers/SplashScreen/SplashScreen'
 import ScanningScreen from '../Containers/ScanningScreen/ScanningScreen'
-
+import LoginScreen from '../Containers/LoginScreen/LoginScreen'
 
 /**
  * The root screen contains the application's navigation.
@@ -14,8 +14,9 @@ const StackNavigator = createStackNavigator(
     // Create the application routes here (the key is the route name, the value is the target screen)
     SplashScreen: SplashScreen,
     // Make main screen is ScanningScreen
-    MainScreen: ScanningScreen,
-    NoPermissionsScreen,
+    MainScreen: LoginScreen,
+                ScanningScreen,
+                NoPermissionsScreen,
   },
   {
     // By default the application will show the splash screen
