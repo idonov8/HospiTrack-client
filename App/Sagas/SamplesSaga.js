@@ -3,6 +3,7 @@ import GpsActions, { GpsTypes } from '../Stores/Gps/Actions';
 import { NEXT_SAMPLE_DELAY } from '../Consts';
 import WifiActions, { WifiTypes } from '../Stores/Wifi/Actions';
 import SampleActions, { SamplesTypes } from '../Stores/Samples/Actions';
+// import AuthActions, { AuthTypes } from '../Stores/Auth/Actions';
 import { gpsService } from '../Services/GpsService';
 import { wifiService } from '../Services/WifiService';
 import { dbService } from '../Services/DbService';
@@ -12,6 +13,7 @@ import { AndroidForegroundService } from '../Services/AndroidForegroundService';
 const wifiListSelector = (state) => !state.wifi.sampleSent && state.wifi.wifiList;
 const gpsLocationSelector = (state) => !state.gps.sampleSent && state.gps.gpsLocation;
 const roomIdSelector = (state) => state.samples.roomId;
+const userIdSelector = (state) => state.auth.id;
 
 const DELAY = NEXT_SAMPLE_DELAY;
 
@@ -70,10 +72,14 @@ export function* sampleDataOnce() {
     const gpsDataForSample = yield call(gpsService.getGpsDataForSample, gps);
     const wifiDataForSample = yield call(wifiService.getWifiDataForSample, wifi);
     const roomDataForSample = {
-      room_id: yield select(roomIdSelector)
+      room_id: null // For now tells the server this is a client and not a mapper.
+      // TODO: remove ASAP. This is ugly ":D 
     };
     const phoneDataForSample = yield call(phoneService.getPhoneDataForSample);
-
+    const userDataForSample = {
+      id: yield select(userIdSelector)
+    };
+    
     const sample = {
       ...gpsDataForSample,
       ...wifiDataForSample,
@@ -81,6 +87,7 @@ export function* sampleDataOnce() {
       // Time in ms
       timestamp: Date.now(),
       ...roomDataForSample,
+      ...userDataForSample
     };
 
     yield call(sendSample, sample);
