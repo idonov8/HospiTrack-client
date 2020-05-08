@@ -8,9 +8,9 @@ import { INITIAL_STATE } from './InitialState'
 import { createReducer } from 'reduxsauce'
 import { AuthTypes } from './Actions'
 
-export const setId = (state, userId) => ({
+export const setId = (state, {id}) => ({
   ...state,
-  id: userId
+  id: id
 });
 
 export const reducer = createReducer(INITIAL_STATE, {
