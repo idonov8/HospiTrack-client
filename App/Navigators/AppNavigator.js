@@ -3,7 +3,6 @@ import NoPermissionsScreen from '../Containers/NoPermissionsScreen/NoPermissions
 import SplashScreen from '../Containers/SplashScreen/SplashScreen'
 import ScanningScreen from '../Containers/ScanningScreen/ScanningScreen'
 
-
 /**
  * The root screen contains the application's navigation.
  *

@@ -1,10 +1,8 @@
 import { createActions } from 'reduxsauce'
 
 const { Types, Creators } = createActions({
-  startSample: null,
-  stopSample: null,
-  sampleSent: null,
+    setId: ['id']
 })
 
-export const SamplesTypes = Types
+export const AuthTypes = Types
 export default Creators

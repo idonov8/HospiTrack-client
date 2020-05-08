@@ -6,19 +6,13 @@
 
 import { INITIAL_STATE } from './InitialState'
 import { createReducer } from 'reduxsauce'
-import { SamplesTypes } from './Actions'
+import { AuthTypes } from './Actions'
 
-const startSampling = (state) => ({
+export const setId = (state, {id}) => ({
   ...state,
-  isSampling: true,
-});
-
-const stopSamping = (state) => ({
-  ...state,
-  isSampling: false,
+  id: id,
 });
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [SamplesTypes.START_SAMPLE]: startSampling,
-  [SamplesTypes.STOP_SAMPLE]: stopSamping,
+  [AuthTypes.SET_ID]: setId,
 })
