@@ -17,9 +17,9 @@ async function validateWifiEnabled() {
 }
 
 async function fetchWifiList() {
-	// We don't use 'await' here, as the setWifiEnable is void, and doesn't return a promise
-	// As we don't know when wifi is enabled if it wasn't on call and we don't care if it is already
-	// enabled, we call the validate func without await, so it'll run behind the scenes
+  // We don't use 'await' here, as the setWifiEnable is void, and doesn't return a promise
+  // As we don't know when wifi is enabled if it wasn't on call and we don't care if it is already
+  // enabled, we call the validate func without await, so it'll run behind the scenes
   validateWifiEnabled();
 
   return new Promise((res, rej) => {
