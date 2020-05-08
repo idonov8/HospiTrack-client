@@ -4,6 +4,7 @@ import { View, TextInput, Text, Button, InteractionManager } from 'react-native'
 import PropTypes from 'prop-types'
 import AuthActions from '../../Stores/Auth/Actions';
 import { connect } from 'react-redux'
+import { put, call, select } from 'redux-saga/effects'
 
 
 
@@ -71,8 +72,13 @@ LoginScreen.propTypes = {
     id: PropTypes.number,
 }
 
+const mapStateToProps = (state) => ({})
+
 const mapDispatchToProps = (dispatch) => ({
     setId: (id) => dispatch(AuthActions.setId(id))
 });
 
-export default connect(null, mapDispatchToProps)(LoginScreen);
+export default connect(
+    mapStateToProps, 
+    mapDispatchToProps
+    )(LoginScreen);

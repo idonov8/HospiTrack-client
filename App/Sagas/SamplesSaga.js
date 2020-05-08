@@ -12,7 +12,7 @@ import { AndroidForegroundService } from '../Services/AndroidForegroundService';
 
 const wifiListSelector = (state) => !state.wifi.sampleSent && state.wifi.wifiList;
 const gpsLocationSelector = (state) => !state.gps.sampleSent && state.gps.gpsLocation;
-const roomIdSelector = (state) => state.samples.roomId;
+// const roomIdSelector = (state) => state.samples.roomId;
 const userIdSelector = (state) => state.auth.id;
 
 const DELAY = NEXT_SAMPLE_DELAY;
