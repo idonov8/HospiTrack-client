@@ -75,7 +75,7 @@ export function* sampleDataOnce() {
     };
     const phoneDataForSample = yield call(phoneService.getPhoneDataForSample);
     const userDataForSample = {
-      userId: yield select(userIdSelector)
+      user_id: yield select(userIdSelector)
     };
     
     const sample = {

@@ -16,7 +16,7 @@ class RootScreen extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.userId !== prevProps.userId) {
+    if (this.props.userId !== prevProps.userId && this.props.userId) {
       // Start the app after user entered id
         this.props.startup()
     }
@@ -26,7 +26,7 @@ class RootScreen extends Component {
     return (
       <View style={Helpers.fill}>
       {
-        this.props.userId === null ?
+        !this.props.userId ?
         (
           <LoginScreen/>
         ) : (

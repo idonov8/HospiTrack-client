@@ -14,7 +14,7 @@ const StackNavigator = createStackNavigator(
     SplashScreen: SplashScreen,
     // Make main screen is ScanningScreen
     MainScreen: ScanningScreen,
-                NoPermissionsScreen,
+    NoPermissionsScreen,
   },
   {
     // By default the application will show the splash screen
