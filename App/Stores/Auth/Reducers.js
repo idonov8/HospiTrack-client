@@ -10,7 +10,7 @@ import { AuthTypes } from './Actions'
 
 export const setId = (state, {id}) => ({
   ...state,
-  id: id
+  id: id,
 });
 
 export const reducer = createReducer(INITIAL_STATE, {

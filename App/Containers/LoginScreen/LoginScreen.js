@@ -1,11 +1,8 @@
 import React from 'react'
 import { View, TextInput, Text, Button, InteractionManager } from 'react-native';
-// import { Helpers, Fonts } from '../Theme';
 import PropTypes from 'prop-types'
 import AuthActions from '../../Stores/Auth/Actions';
 import { connect } from 'react-redux'
-import { put, call, select } from 'redux-saga/effects'
-
 
 
 class LoginScreen extends React.Component {
@@ -42,13 +39,10 @@ class LoginScreen extends React.Component {
     }
 
     submit = () => {
-        console.log('submit')
-        const id = this.state.userId;
-        console.log('id: ', id);
-        this.props.setId(id);
+        this.props.setId(this.state.userId);
     }
+
     render(){
-        const { setId } = this.props;
         return(
         <View>
             <Text>אנא כתבו את המספר האישי שלכם</Text>
@@ -63,8 +57,6 @@ class LoginScreen extends React.Component {
         </View>
         )
     }
-
-
 }
 
 LoginScreen.propTypes = {
