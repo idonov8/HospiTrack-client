@@ -41,7 +41,7 @@ export default function SampleBody(props) {
       >
         {btnTitle}
       </Button>
-      <Image source={Images.Location}></Image>
+      <Image source={Images.Symbol} style={{height: 100, width: 100}}></Image>
       <Text style={[
           Fonts.h4,
           Helpers.textCenter,

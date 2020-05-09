@@ -5,7 +5,8 @@
 const IMAGES_PATH = 'App/Assets/Images';
 
 export default {
-  Logo: require('App/Assets/Images/Logo.png'),
+  Logo: require(`${IMAGES_PATH}/Logo.png`),
   NoLocationPermission: require(`${IMAGES_PATH}/NoLocationPermission.png`),
-  Location: require(`${IMAGES_PATH}/Location.png`)
+  Location: require(`${IMAGES_PATH}/Location.png`),
+  Symbol: require(`${IMAGES_PATH}/App Logo.png`)
 }
