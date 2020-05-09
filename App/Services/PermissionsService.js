@@ -7,9 +7,7 @@ const requestPermissions = async () => {
   // as the user might be afraid from so much permissions
   // right on startup
   const permissionsToAsk = [
-    PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-    PermissionsAndroid.PERMISSIONS.READ_PHONE_STATE,
-    PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE
+    PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
   ]
 
   const grantedResults = await PermissionsAndroid.requestMultiple(permissionsToAsk);
