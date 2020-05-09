@@ -21,6 +21,5 @@ const reflectError = (error) => ({ payload: error, resolved: false });
 const reflectResult = (result) => ({ payload: result, resolved: true });
 
 export const promisesService = {
-  reflectPromise,
   allSettled
 }
