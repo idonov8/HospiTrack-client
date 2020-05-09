@@ -9,6 +9,13 @@ import {
 import PropTypes from "prop-types";
 import AuthActions from "../../Stores/Auth/Actions";
 import { connect } from "react-redux";
+import {
+  Wrapper,
+  Title,
+  WelcomeWrapper,
+  Info,
+  InfoWrapper,
+} from "./LoginScreenStyle";
 
 class LoginScreen extends React.Component {
   // Used to store reference to input element
@@ -49,8 +56,9 @@ class LoginScreen extends React.Component {
 
   render() {
     return (
-      <View>
-        <View>
+      <Wrapper>
+        <Title>שלום!</Title>
+        <WelcomeWrapper>
           <Text>
             ברוכים הבאים לTrackIn, שתוודא שמי שנחשף לנגיף ייכנס לבידוד ומי שלא
             לא :)
@@ -64,15 +72,16 @@ class LoginScreen extends React.Component {
             ref={this.inputRef}
           />
           <Button title="אישור" onPress={this.submit} />
-        </View>
-        <View>
-          <Text>
-            במסך הבא, תתבקשו לאשר לאפליקציה גישה למיקום שלכם. בבקשה תאשרו,
-            האפליקציה משתמשת בחיישנים אך ורק כשאתם בבסיס.
-          </Text>
-        </View>
-      </View>
-    )
+        </WelcomeWrapper>
+        <InfoWrapper>
+          <Info>במסך הבא, תתבקשו לאשר לאפליקציה גישה למיקום שלכם.</Info>
+          <Info bold>
+            אנא אשרו. האפליקציה משתמשת בחיישנים רק כשאתם בבסיס, והמידע ישמש
+            למטרות בריאותיות, ולמחקר ופיתוח של האפליקציה בלבד.
+          </Info>
+        </InfoWrapper>
+      </Wrapper>
+    );
   }
 }
 
@@ -85,4 +94,4 @@ const mapDispatchToProps = (dispatch) => ({
   setId: (id) => dispatch(AuthActions.setId(id)),
 });
 
-export default connect( null, mapDispatchToProps)(LoginScreen);
+export default connect(null, mapDispatchToProps)(LoginScreen);
