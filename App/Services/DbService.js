@@ -31,7 +31,7 @@ const saveSample = async (data) => {
 }
 
 const writeLocally = async (data) => {
-    const path = fs.ExternalStorageDirectoryPath + '/data.txt';
+    const path = fs.DocumentDirectoryPath + '/data.txt';
     const isFileExist = await fs.exists(path);
     const dataToWrite = JSON.stringify(data) + ", ";
     

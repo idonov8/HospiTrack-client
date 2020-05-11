@@ -8,5 +8,5 @@ export default {
   Logo: require(`${IMAGES_PATH}/Logo.png`),
   NoLocationPermission: require(`${IMAGES_PATH}/NoLocationPermission.png`),
   Location: require(`${IMAGES_PATH}/Location.png`),
-  Symbol: require(`${IMAGES_PATH}/App Logo.png`)
+  Symbol: require(`${IMAGES_PATH}/AppLogo.png`)
 }
